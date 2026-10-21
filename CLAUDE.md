@@ -12,17 +12,19 @@ GitHub Pages to serve the files exactly as they are.
 
 | File | What it is |
 |---|---|
-| `index.html` | Home page: intro, rotating research words, research cards, news, selected papers, contact |
+| `index.html` | Home page: intro with rotating research words, research cards, contact |
 | `research.html` | The four research themes, methods, and research positions |
 | `publications.html` | Every paper, manuscript, talk, and poster |
-| `cv.html` | CV summary plus the embedded PDF |
+| `cv.html` | Only forwards old links to the PDF; the CV menu item opens the PDF directly |
 | `assets/files/Shin_CV.pdf` | The CV PDF linked from every page |
 | `assets/css/style.css` | All styling. Colors are the tokens at the top: `--accent` (burgundy) for links and labels, `--accent-fill` for button backgrounds |
 | `assets/js/main.js` | Dark-mode toggle, mobile menu, animations, publication filter |
 | `assets/img/` | Headshot (`rachel-shin.webp` and `.jpg`, 800×1000), favicon |
 
-The header and footer are repeated in each of the four HTML pages. Change all four when
-editing them, such as when adding a menu item or a social link.
+The header and footer are repeated in `index.html`, `publications.html`, and
+`research.html`. Change all three when editing them, such as when adding a menu item or a
+social link. The menu order is Home, Publications, CV, Research. CV links straight to
+`assets/files/Shin_CV.pdf`, the way many academic sites do.
 
 ## Common updates
 
@@ -30,18 +32,14 @@ editing them, such as when adding a menu item or a social link.
 copying an existing entry. Set `data-type` to `article` or `presentation`, adding `first`
 if Rachel is first author (e.g. `data-type="article first"`). Bold her name with
 `<b>Shin, J. Y.</b>`. Then also:
-- add a line to the News timeline on `index.html` if it is worth announcing.
 - add it to the "Related work" list of the matching theme in `research.html`.
 - move a paper from "Manuscripts in preparation" once it is published.
 
-**News item.** Add an `<li>` at the top of `.timeline` in `index.html`. Keep 4–6 items and
-drop the oldest.
-
 **New CV.** Rachel keeps her CV as a Word file. Export it to PDF and replace
 `assets/files/Shin_CV.pdf`, keeping the same file name. Update the "Last updated" month
-in the footer of every page and the date on `cv.html`. Leave the phone number out of the
-public PDF. Then compare the CV with the site: publications and presentations, research
-positions (with advisor/PI and research focus), awards, and the News timeline. The
+in the footer of every page. Leave the phone number out of the public PDF. Then compare the
+CV with the site: publications and presentations, research positions (with advisor/PI and
+research focus), and the home-page intro. The
 website should never contradict the CV.
 
 **New photo.** Crop it to 4:5 portrait, about 800×1000. Save it as both
