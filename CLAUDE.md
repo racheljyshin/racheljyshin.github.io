@@ -12,7 +12,7 @@ GitHub Pages to serve the files exactly as they are.
 
 | File | What it is |
 |---|---|
-| `index.html` | Home page: intro with rotating research words, research cards, contact |
+| `index.html` | Home page: intro with rotating phrases (the `data-words` list on `.rotator`; keep the first word in the span the same as the list's first item), research cards, contact |
 | `research.html` | The four research themes, methods, and research positions |
 | `publications.html` | Every paper, manuscript, talk, and poster |
 | `cv.html` | Only forwards old links to the PDF; the CV menu item opens the PDF directly |
@@ -29,10 +29,11 @@ social link. The menu order is Home, Publications, CV, Research. CV links straig
 ## Common updates
 
 **New paper.** Add an `<li class="pub">` at the top of the right list in `publications.html`,
-copying an existing entry. Set `data-type` to `article` or `presentation`, adding `first`
-if Rachel is first author (e.g. `data-type="article first"`). Bold her name with
-`<b>Shin, J. Y.</b>`. Then also:
-- add it to the "Related work" list of the matching theme in `research.html`.
+copying an existing entry. Set `data-type` to `article` or `presentation`. Bold her name
+with `<b>Shin, J. Y.</b>`. Don't add "first author" labels; she removed them. Then also:
+- add it to the "Related work" list of the matching theme in `research.html`. Use the
+  exact title from her CV, linked to the DOI when there is one, with an author line such
+  as `<b>Shin et al.</b> (2025) · <i>Journal</i>`. Titles there must always match the CV.
 - move a paper from "Manuscripts in preparation" once it is published.
 
 **New CV.** Rachel keeps her CV as a Word file. Export it to PDF and replace

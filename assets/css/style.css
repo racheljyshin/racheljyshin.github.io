@@ -342,6 +342,8 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border
 .page-head { padding: clamp(40px, 6vw, 72px) 0 clamp(20px, 3vw, 32px); }
 .page-head h1 { margin-bottom: 12px; }
 .page-head .lede { color: var(--muted); font-size: 1.12rem; max-width: 42em; margin: 0; }
+.page-head .lede p { margin: 0 0 0.9em; }
+.page-head .lede p:last-child { margin-bottom: 0; }
 
 .prose { max-width: 46em; }
 
@@ -358,8 +360,13 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border
 .theme p { color: var(--text); }
 .related { margin-top: 14px; padding: 14px 18px; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--border); }
 .related .label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-.related ul { margin: 6px 0 0; padding-left: 18px; font-size: 0.93rem; }
-.related li { margin: 4px 0; }
+.related ul { list-style: none; margin: 8px 0 0; padding: 0; }
+.related li { margin: 0; padding: 9px 0; border-top: 1px solid var(--border); }
+.related li:first-child { border-top: 0; padding-top: 4px; }
+.related .rw-title { display: block; font-size: 0.95rem; font-weight: 600; line-height: 1.4; color: var(--text); }
+.related a.rw-title:hover { color: var(--accent); }
+.related .rw-meta { display: block; margin-top: 2px; font-size: 0.85rem; color: var(--muted); }
+.related .rw-meta b { color: var(--text); font-weight: 700; }
 @media (max-width: 560px) { .theme { grid-template-columns: 1fr; gap: 8px; } }
 
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -397,7 +404,7 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border
 .pub .yr { font-family: var(--serif); font-weight: 600; color: var(--accent); font-size: 1.05rem; padding-top: 1px; }
 .pub .title { font-weight: 600; line-height: 1.4; }
 .pub .authors { color: var(--muted); font-size: 0.93rem; margin-top: 3px; }
-.pub .authors b { color: var(--text); font-weight: 600; }
+.pub .authors b { color: var(--text); font-weight: 700; }
 .pub .venue { font-size: 0.93rem; margin-top: 2px; }
 .pub .venue i { color: var(--text); }
 .pub .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
