@@ -201,13 +201,13 @@ p { margin: 0 0 1em; }
 .btn-ghost:hover { color: var(--text); background: var(--surface-2); }
 
 .eyebrow {
-  display: inline-flex; align-items: flex-start; gap: 9px;
-  padding: 8px 16px; border-radius: 12px;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px; border-radius: 999px;
   background: var(--accent-soft); color: var(--accent);
-  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.01em; line-height: 1.45;
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.01em;
 }
 .eyebrow .dot {
-  flex: none; margin-top: 0.5em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+  flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
   box-shadow: 0 0 0 0 var(--accent); animation: pulse 2.4s ease-out infinite;
 }
 @keyframes pulse {
