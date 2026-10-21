@@ -10,11 +10,13 @@
   --text: #1e1b1a;
   --muted: #625c58;
   --border: #e6e0da;
-  --accent: #a3253c;          /* crimson-rose */
-  --accent-hover: #861d31;
-  --accent-soft: #f7e9ec;
-  --accent-ink: #ffffff;
-  --glow-1: rgba(163, 37, 60, 0.10);
+  --accent: #7a1f33;          /* burgundy: links, labels, highlights */
+  --accent-hover: #5f1727;
+  --accent-fill: #7a1f33;     /* button backgrounds */
+  --accent-fill-hover: #5f1727;
+  --accent-soft: #f4ebed;
+  --accent-ink: #ffffff;      /* text on accent-fill */
+  --glow-1: rgba(122, 31, 51, 0.07);
   --glow-2: rgba(214, 154, 92, 0.12);
   --shadow: 0 1px 2px rgba(30, 27, 26, 0.04), 0 8px 24px rgba(30, 27, 26, 0.06);
   --shadow-lg: 0 2px 4px rgba(30, 27, 26, 0.05), 0 24px 48px rgba(30, 27, 26, 0.10);
@@ -35,11 +37,13 @@
     --text: #efebe8;
     --muted: #aaa29e;
     --border: #322d2e;
-    --accent: #ec8a9a;
-    --accent-hover: #f4a6b3;
-    --accent-soft: #3a2228;
-    --accent-ink: #1a0f12;
-    --glow-1: rgba(236, 138, 154, 0.10);
+    --accent: #cc8090;
+    --accent-hover: #dc99a7;
+    --accent-fill: #8c2b40;
+    --accent-fill-hover: #a0344b;
+    --accent-soft: #2f2326;
+    --accent-ink: #ffffff;
+    --glow-1: rgba(140, 43, 64, 0.16);
     --glow-2: rgba(214, 154, 92, 0.08);
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
     --shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.3), 0 24px 48px rgba(0, 0, 0, 0.35);
@@ -53,11 +57,13 @@
   --text: #efebe8;
   --muted: #aaa29e;
   --border: #322d2e;
-  --accent: #ec8a9a;
-  --accent-hover: #f4a6b3;
-  --accent-soft: #3a2228;
-  --accent-ink: #1a0f12;
-  --glow-1: rgba(236, 138, 154, 0.10);
+  --accent: #cc8090;
+  --accent-hover: #dc99a7;
+  --accent-fill: #8c2b40;
+  --accent-fill-hover: #a0344b;
+  --accent-soft: #2f2326;
+  --accent-ink: #ffffff;
+  --glow-1: rgba(140, 43, 64, 0.16);
   --glow-2: rgba(214, 154, 92, 0.08);
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
   --shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.3), 0 24px 48px rgba(0, 0, 0, 0.35);
@@ -107,7 +113,7 @@ p { margin: 0 0 1em; }
 
 .skip-link {
   position: absolute; left: -999px; top: 8px; z-index: 100;
-  background: var(--accent); color: var(--accent-ink); padding: 8px 14px; border-radius: 8px;
+  background: var(--accent-fill); color: var(--accent-ink); padding: 8px 14px; border-radius: 8px;
 }
 .skip-link:focus { left: 8px; }
 
@@ -189,8 +195,8 @@ p { margin: 0 0 1em; }
 }
 .btn:hover { text-decoration: none; transform: translateY(-1px); }
 .btn svg { width: 16px; height: 16px; }
-.btn-primary { background: var(--accent); color: var(--accent-ink); box-shadow: 0 6px 18px var(--glow-1); }
-.btn-primary:hover { background: var(--accent-hover); color: var(--accent-ink); }
+.btn-primary { background: var(--accent-fill); color: var(--accent-ink); box-shadow: 0 6px 18px var(--glow-1); }
+.btn-primary:hover { background: var(--accent-fill-hover); color: var(--accent-ink); }
 .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
 .btn-ghost:hover { color: var(--text); background: var(--surface-2); }
 
@@ -260,14 +266,6 @@ p { margin: 0 0 1em; }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
 
-.hero-stats {
-  display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: clamp(20px, 4vw, 44px);
-  margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border);
-}
-.stat-num {
-  font-family: var(--serif); font-size: 2rem; font-weight: 600; line-height: 1; color: var(--text);
-}
-.stat-label { font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
 
 .portrait-wrap { position: relative; justify-self: center; width: min(100%, 380px); }
 .portrait-wrap::before {
@@ -283,27 +281,10 @@ p { margin: 0 0 1em; }
   box-shadow: var(--shadow-lg);
   background: var(--surface-2);
 }
-.portrait-badge {
-  position: absolute; left: -18px; bottom: 34px;
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 16px 10px 12px; border-radius: 14px;
-  background: var(--surface); box-shadow: var(--shadow-lg); border: 1px solid var(--border);
-  font-size: 0.85rem; line-height: 1.25;
-  animation: float 6s ease-in-out infinite;
-}
-.portrait-badge .badge-icon {
-  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px;
-  background: var(--accent-soft); color: var(--accent);
-}
-.portrait-badge .badge-icon svg { width: 18px; height: 18px; }
-.portrait-badge strong { display: block; font-size: 0.9rem; }
-.portrait-badge span { color: var(--muted); }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
 @media (max-width: 860px) {
   .hero-grid { grid-template-columns: 1fr; }
   .portrait-wrap { order: -1; width: min(70%, 300px); }
-  .portrait-badge { left: -8px; }
 }
 
 /* ---------- sections ---------- */
@@ -418,6 +399,7 @@ a.pub-feature:hover { border-color: var(--accent); transform: translateX(4px); t
 .positions .yrs { font-weight: 600; color: var(--accent); font-size: 0.92rem; padding-top: 2px; }
 .positions .org { font-weight: 600; }
 .positions .role { color: var(--muted); font-size: 0.93rem; }
+.positions .focus { color: var(--muted); font-size: 0.88rem; font-style: italic; margin-top: 2px; }
 @media (max-width: 560px) { .positions li { grid-template-columns: 1fr; gap: 2px; } }
 
 /* publications */
@@ -427,7 +409,7 @@ a.pub-feature:hover { border-color: var(--accent); transform: translateX(4px); t
   background: var(--surface); color: var(--muted); font: inherit; font-size: 0.9rem; font-weight: 500; cursor: pointer;
 }
 .filter-btn:hover { color: var(--text); }
-.filter-btn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.filter-btn[aria-pressed="true"] { background: var(--accent-fill); border-color: var(--accent-fill); color: var(--accent-ink); }
 
 .pub-section { margin-top: 40px; scroll-margin-top: 90px; }
 .pub-section > h2 { font-size: 1.45rem; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
@@ -498,7 +480,7 @@ a.pub-feature:hover { border-color: var(--accent); transform: translateX(4px); t
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .portrait-badge, .eyebrow .dot { animation: none; }
+  .eyebrow .dot { animation: none; }
   .rotator .word { transition: none; }
 }
 

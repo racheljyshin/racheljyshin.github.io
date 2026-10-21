@@ -1,5 +1,5 @@
 // Site behavior: theme toggle, mobile menu, header shadow, rotating words,
-// reveal-on-scroll, count-up stats, and the publication filter.
+// reveal-on-scroll, and the publication filter.
 (function () {
   var root = document.documentElement;
   root.classList.remove("no-js");
@@ -68,26 +68,6 @@
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add("visible"); });
-  }
-
-  // ----- count-up stats -----
-  var nums = document.querySelectorAll("[data-count]");
-  if (nums.length && "IntersectionObserver" in window && !reduceMotion) {
-    var countIo = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        var el = e.target, target = parseInt(el.getAttribute("data-count"), 10), start = null;
-        var step = function (t) {
-          if (!start) start = t;
-          var p = Math.min((t - start) / 1100, 1);
-          el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
-          if (p < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-        countIo.unobserve(el);
-      });
-    }, { threshold: 0.6 });
-    nums.forEach(function (el) { countIo.observe(el); });
   }
 
   // ----- publication filter (publications page) -----
