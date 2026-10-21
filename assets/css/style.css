@@ -21,7 +21,7 @@
   --shadow: 0 1px 2px rgba(30, 27, 26, 0.04), 0 8px 24px rgba(30, 27, 26, 0.06);
   --shadow-lg: 0 2px 4px rgba(30, 27, 26, 0.05), 0 24px 48px rgba(30, 27, 26, 0.10);
 
-  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --display: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --radius: 14px;
@@ -92,10 +92,10 @@ a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-hover); text-decoration: underline; text-underline-offset: 3px; }
 
 h1, h2, h3 {
-  font-family: var(--serif);
-  font-weight: 560;
+  font-family: var(--display);
+  font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   margin: 0 0 0.5em;
 }
 h1 { font-size: clamp(2.3rem, 5.5vw, 3.6rem); }
@@ -139,7 +139,7 @@ p { margin: 0 0 1em; }
 }
 
 .brand {
-  font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--text);
+  font-family: var(--display); font-size: 1.3rem; font-weight: 600; color: var(--text);
   letter-spacing: -0.01em;
 }
 .brand:hover { color: var(--text); text-decoration: none; }
@@ -237,7 +237,7 @@ p { margin: 0 0 1em; }
 .hero h1 { margin: 18px 0 14px; font-size: clamp(2.2rem, 4.6vw, 3.2rem); }
 
 .hero-statement {
-  font-family: var(--serif); font-weight: 400;
+  font-family: var(--display); font-weight: 400;
   font-size: clamp(1.25rem, 2.4vw, 1.6rem); line-height: 1.4;
   color: var(--text); margin-bottom: 18px;
 }
@@ -412,7 +412,7 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border
   padding: 16px 0; border-bottom: 1px dashed var(--border);
 }
 .pub:last-child { border-bottom: 0; }
-.pub .yr { font-family: var(--serif); font-weight: 600; color: var(--accent); font-size: 1.05rem; padding-top: 1px; }
+.pub .yr { font-family: var(--display); font-weight: 600; color: var(--accent); font-size: 1.05rem; padding-top: 1px; }
 .pub .title { font-weight: 600; line-height: 1.4; }
 .pub .authors { color: var(--muted); font-size: 0.93rem; margin-top: 3px; }
 .pub .authors b { color: var(--text); font-weight: 700; }

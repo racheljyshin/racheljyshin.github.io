@@ -52,11 +52,19 @@ list on `index.html` (there's a commented example) and in each page's `.footer-l
 
 ## Style rules
 
+- Fonts: headings use Plus Jakarta Sans (`--display` in the CSS), body text uses Inter. She asked
+  for a modern look; avoid quirky display serifs.
 - APA 7 for citations: sentence-case titles, italic journal names, DOI links.
 - Write in first person ("I study…"), warm but professional. Don't overstate findings.
 - Keep it concise: she found the Research page too wordy once. Aim for 2–3 sentences per topic.
 - Keep it accessible: every image needs `alt` text, every icon-only link needs `aria-label`.
 - Check every change at phone width (about 390px) as well as on desktop.
+
+## Search engines
+
+`sitemap.xml` and `robots.txt` help Google find the pages. Add new pages to `sitemap.xml`.
+The home page has structured data (`application/ld+json`) describing Rachel; keep it in step
+with her current position.
 
 ## Previewing locally
 

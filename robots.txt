@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://racheljyshin.github.io/sitemap.xml
