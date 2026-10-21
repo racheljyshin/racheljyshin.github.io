@@ -13,7 +13,7 @@ GitHub Pages to serve the files exactly as they are.
 | File | What it is |
 |---|---|
 | `index.html` | Home page: intro with rotating phrases (the `data-words` list on `.rotator`; keep the first word in the span the same as the list's first item), research cards, contact |
-| `research.html` | The four research themes, methods, and research positions |
+| `research.html` | Research overview, the four research themes with related work, and research positions |
 | `publications.html` | Every paper, manuscript, talk, and poster |
 | `cv.html` | Only forwards old links to the PDF; the CV menu item opens the PDF directly |
 | `assets/files/Shin_CV.pdf` | The CV PDF linked from every page |
