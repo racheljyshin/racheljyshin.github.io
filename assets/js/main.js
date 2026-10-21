@@ -43,6 +43,29 @@
   if (rot && !reduceMotion) {
     var words = JSON.parse(rot.parentElement.getAttribute("data-words"));
     var i = 0;
+
+    // Reserve the height the sentence needs for its longest phrase, so the
+    // page below doesn't jump when a longer phrase wraps onto an extra line.
+    var statement = rot.closest(".hero-statement");
+    var reserveHeight = function () {
+      var shown = rot.textContent, tallest = 0;
+      statement.style.minHeight = "";
+      words.forEach(function (w) {
+        rot.textContent = w;
+        tallest = Math.max(tallest, statement.getBoundingClientRect().height);
+      });
+      rot.textContent = shown;
+      statement.style.minHeight = Math.ceil(tallest) + "px";
+    };
+    reserveHeight();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(reserveHeight);
+    var resizeQueued = false;
+    window.addEventListener("resize", function () {
+      if (resizeQueued) return;
+      resizeQueued = true;
+      requestAnimationFrame(function () { resizeQueued = false; reserveHeight(); });
+    });
+
     setInterval(function () {
       rot.classList.add("out");
       setTimeout(function () {
